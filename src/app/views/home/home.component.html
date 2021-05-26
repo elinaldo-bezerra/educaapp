@@ -1,12 +1,32 @@
-
 <mat-toolbar color="primary">
     <mat-toolbar-row>
       <img mat-card-image src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Bandeira_do_Imp%C3%A9rio_do_Brasil_com_n%C3%B3_em_her%C3%A1ldica_correta.png/640px-Bandeira_do_Imp%C3%A9rio_do_Brasil_com_n%C3%B3_em_her%C3%A1ldica_correta.png"
        alt="Photo of a Shiba Inu" style="width: 10%;" >
-      <span> Escola Imperial do Brasil</span>
+        <span> Escola Imperial do Brasil</span>
 
-    </mat-toolbar-row>
-  </mat-toolbar>
+      </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-tab-group mat-align-tabs = "start">
+
+  <mat-card>Simple card</mat-card>
+
+  <mat-tab label="Alunos">
+    <app-alunos></app-alunos>
+  </mat-tab>
+
+  <mat-tab label="Turmas">
+    <app-turmas></app-turmas>
+  </mat-tab>
+
+  <mat-tab label="Disciplinas">
+    <app-disciplinas></app-disciplinas>
+  </mat-tab>
+
+  <mat-tab label="Notas">
+    <app-notas></app-notas>
+  </mat-tab>
 
 
-  <app-boletim></app-boletim>
+</mat-tab-group>
+

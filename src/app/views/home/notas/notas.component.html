@@ -1,0 +1,59 @@
+
+   <mat-grid-list cols="2"  rowHeight="1:0.95" >
+      <mat-grid-tile>
+        <mat-card style="width: 500px;">
+        <div mat-card-avatar class="example-header-image" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/DpedroI-brasil-full.jpg/380px-DpedroI-brasil-full.jpg');"></div>
+        <mat-card-title>Dom Pedro I</mat-card-title>
+        <mat-card-subtitle>Imperador do Brasil</mat-card-subtitle>
+        <mat-card-subtitle>Matrícula: 1798</mat-card-subtitle>
+
+      <table mat-table [dataSource]="data" class="mat-elevation-z8"  style="width: 700px;">
+        <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns">
+          <th mat-header-cell *matHeaderCellDef> {{column}} </th>
+          <td mat-cell *matCellDef="let element"> {{element[column]}} </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+        <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
+      </table>
+      </mat-card>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-card>
+        <div mat-card-avatar class="example-header-image" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/29-_Imperatriz_rainha_D._Leopoldina.jpg/255px-29-_Imperatriz_rainha_D._Leopoldina.jpg');"></div>
+        <mat-card-title>Maria Leopoldina de Áustria</mat-card-title>
+        <mat-card-subtitle>Arquiduquesa da Áustria</mat-card-subtitle>
+        <mat-card-subtitle>Matrícula: 1797</mat-card-subtitle>
+
+        <table mat-table [dataSource]="data" class="mat-elevation-z8">
+      <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns">
+        <th mat-header-cell *matHeaderCellDef> {{column}} </th>
+        <td mat-cell *matCellDef="let element"> {{element[column]}} </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+      <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
+    </table>
+  </mat-card>
+  </mat-grid-tile>
+
+
+<mat-grid-tile>
+   <mat-card>
+       <div mat-card-avatar class="example-header-image" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/DpedroI-brasil-full.jpg/380px-DpedroI-brasil-full.jpg');"></div>
+        <mat-card-title>José Bonifácio de Andrada e Silva</mat-card-title>
+        <mat-card-subtitle>Patrono da Independência do Brasil</mat-card-subtitle>
+        <mat-card-subtitle>Matrícula: 1763</mat-card-subtitle>
+
+      <table mat-table [dataSource]="data" class="mat-elevation-z8">
+      <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns">
+        <th mat-header-cell *matHeaderCellDef> {{column}} </th>
+        <td mat-cell *matCellDef="let element"> {{element[column]}} </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+      <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
+      </table>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
+
+

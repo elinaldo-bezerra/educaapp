@@ -1,0 +1,9 @@
+.example-card {
+  margin-top: 0.7%;
+  max-width:50%;
+}
+
+.example-header-image {
+  background-size: cover;
+  margin-bottom: 0.7%;
+}

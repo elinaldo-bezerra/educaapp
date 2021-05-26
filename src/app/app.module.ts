@@ -10,21 +10,27 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTabsModule } from '@angular/material/tabs';
-import { ResultadoListComponent } from './views/home/resultado/resultado.component';
-import { BoletimComponent } from './views/home/boletim/boletim.component';
+
 import {MatCardModule} from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
+import {MatGridListModule} from '@angular/material/grid-list';
+
+import { AlunosComponent } from './views/home/alunos/alunos.component';
+import { DisciplinasComponent } from './views/home/disciplinas/disciplinas.component';
+import { TurmasComponent } from './views/home/turmas/turmas.component';
+import { NotasComponent } from './views/home/notas/notas.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ResultadoListComponent,
-    BoletimComponent,
-
+    AlunosComponent,
+    DisciplinasComponent,
+    TurmasComponent,
+    NotasComponent,
   ],
 
   imports: [
@@ -39,6 +45,7 @@ import {MatListModule} from '@angular/material/list';
     MatTableModule,
     MatDividerModule,
     MatListModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
