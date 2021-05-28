@@ -9,14 +9,20 @@
 
 <mat-tab-group mat-align-tabs = "start">
 
-  <mat-card>Simple card</mat-card>
+  <mat-tab label="Escolas">
+    <app-escolas></app-escolas>
+  </mat-tab>
 
-  <mat-tab label="Alunos">
-    <app-alunos></app-alunos>
+  <mat-tab label="Anos Letivos">
+    <app-anosletivos></app-anosletivos>
   </mat-tab>
 
   <mat-tab label="Turmas">
     <app-turmas></app-turmas>
+  </mat-tab>
+
+  <mat-tab label="Alunos">
+    <app-alunos></app-alunos>
   </mat-tab>
 
   <mat-tab label="Disciplinas">
