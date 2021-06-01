@@ -1,9 +1,12 @@
-.example-card {
-  margin-top: 0.7%;
-  max-width: 400px;
+.container {
+  margin-top: 7px;
 }
-
-.example-header-image {
-  background-size: cover;
-  margin-bottom: 5%;
+.add-aluno {
+  margin-bottom: 7px;
+}
+.list-aluno {
+  margin-bottom: 7px;
+}
+.btn-add-aluno {
+  margin: 7px;
 }

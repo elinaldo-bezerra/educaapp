@@ -1,26 +1,74 @@
-<mat-card class="example-card mat-elevation-z8" >
-  <mat-card-content class="example-header-image" >
-    <div mat-card-avatar class="example-header-image" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/DpedroI-brasil-full.jpg/380px-DpedroI-brasil-full.jpg');"></div>
-    <mat-card-title>Dom Pedro I</mat-card-title>
-    <mat-card-subtitle>Imperador do Brasil</mat-card-subtitle>
-    <mat-card-subtitle>Matŕicula: 1798</mat-card-subtitle>
-  </mat-card-content>
-</mat-card>
+<div class="container">
+  <div class="card list-aluno">
+    <h5 class="card-header">Lista de Alunos</h5>
+    <div class="card-body">
+      <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Matrícula</th>
+              <th scope="col">Nome</th>
+              <th scope="col">Imagem</th>
+              <th scope="col">Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let aluno of alunos">
+              <td>{{aluno.id}}</td>
+              <td>{{aluno.matricula}}</td>
+              <td>{{aluno.name}}</td>
+              <td>{{aluno.imagem}}</td>
+              <td>
+                <button type="button" class="btn btn-warning btn-sm"     (click)="editAluno(aluno)">Editar</button>
+                <button type="button" class="btn btn-danger btn-sm ml-1" (click)="deleteAluno(aluno)">Deletar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
 
-<mat-card class="example-card mat-elevation-z8" >
-  <mat-card-content class="example-header-image" >
-    <div mat-card-avatar class="example-header-image" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/29-_Imperatriz_rainha_D._Leopoldina.jpg/255px-29-_Imperatriz_rainha_D._Leopoldina.jpg');"></div>
-    <mat-card-title>Maria Leopoldina de Áustria</mat-card-title>
-    <mat-card-subtitle>Arquiduquesa da Áustria</mat-card-subtitle>
-    <mat-card-subtitle>Matŕicula: 1797</mat-card-subtitle>
-  </mat-card-content>
-</mat-card>
+  <div class="card add-aluno">
+      <h5 class="card-header">Adicionar/Atualizar Aluno</h5>
+      <div class="card-body">
+          <form id="add-form" (ngSubmit)="f.form.valid && saveAluno(f)" #f="ngForm" novalidate>
 
-<mat-card class="example-card mat-elevation-z8" >
-  <mat-card-content>
-    <div mat-card-avatar class="example-header-image" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/DpedroI-brasil-full.jpg/380px-DpedroI-brasil-full.jpg');"></div>
-    <mat-card-title>José Bonifácio de Andrada e Silva</mat-card-title>
-    <mat-card-subtitle>Patrono da Independência do Brasil</mat-card-subtitle>
-    <mat-card-subtitle>Matŕicula: 1763</mat-card-subtitle>
-  </mat-card-content>
-</mat-card>
+            <div class="form-group">
+
+              <label for="matricula">Matricula</label>
+              <input type="text" [(ngModel)]="aluno.matricula" id="matricula" name="matricula" #matricula="ngModel"
+               required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && matricula.invalid }" placeholder="Digite a Matricula">
+
+               <div *ngIf="f.submitted && matricula.invalid" class="invalid-feedback">
+                <div *ngIf="matricula.errors?.required">A Matricula é obrigatória</div>
+              </div>
+           </div>
+
+        <div class="form-group">
+              <label for="name">Nome</label>
+              <input type="text" [(ngModel)]="aluno.name" id="name" name="name" #name="ngModel"
+               required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && name.invalid }" placeholder="Digite o Nome do Aluno">
+
+
+               <div *ngIf="f.submitted && name.invalid" class="invalid-feedback">
+                  <div *ngIf="name.errors?.required">A imagem é obrigatória</div>
+              </div>
+          </div>
+
+            <div class="form-group">
+                <label for="imagem">Imagem</label>
+                <input type="text" [(ngModel)]="aluno.imagem" id="imagem" name="imagem" #imagem="ngModel"
+                required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && imagem.invalid }" placeholder="Digite o endereço da imagem">
+
+                <div *ngIf="f.submitted && imagem.invalid" class="invalid-feedback">
+                    <div *ngIf="imagem.errors?.required">A imagem é obrigatória</div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-add-alçuno">Salvar</button>
+            <button type="reset" class="btn btn-secondary btn-add-aluno" (click)="cleanForm(f)">Cancelar</button>
+          </form>
+      </div>
+    </div>
+</div>
+
