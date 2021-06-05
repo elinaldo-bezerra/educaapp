@@ -3,4 +3,5 @@ export interface Aluno {
   matricula : string;
   name: string ;
   imagem: string ;
+  cpf: string ;
 }

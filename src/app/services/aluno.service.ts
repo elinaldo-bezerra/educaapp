@@ -11,6 +11,7 @@ import { Aluno } from '../models/aluno';
 export class AlunoService {
 
   url = 'http://localhost:8080/api/v1/aluno';
+  //url = 'https://apieduca.herokuapp.com/api/v1/aluno/'
 
   // injetando o HttpClient
   constructor(private httpClient: HttpClient) { }
@@ -22,7 +23,7 @@ export class AlunoService {
 
   // Obtem todos os alunos
   getAlunos(): Observable<Aluno[]> {
-    return this.httpClient.get<Aluno[]>(this.url + '/lista')
+    return this.httpClient.get<Aluno[]>(this.url)
       .pipe(
         retry(2),
         catchError(this.handleError))
@@ -48,7 +49,7 @@ export class AlunoService {
 
   // deleta uma aluno
   deleteAluno(aluno: Aluno) {
-    return this.httpClient.delete<Aluno>(this.url + '/' + aluno.matricula, this.httpOptions)
+    return this.httpClient.delete<Aluno>(this.url + '/delete/' + aluno.id, this.httpOptions)
       .pipe(
         retry(1),
         catchError(this.handleError)

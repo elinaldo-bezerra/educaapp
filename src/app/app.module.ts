@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './views/home/home.component';
@@ -13,6 +12,7 @@ import { TurmasComponent } from './views/home/turmas/turmas.component';
 import { NotasComponent } from './views/home/notas/notas.component';
 import { EscolasComponent } from './views/home/escolas/escolas.component';
 import { AnosletivosComponent } from './views/home/anosletivos/anosletivos.component';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +31,8 @@ import { AnosletivosComponent } from './views/home/anosletivos/anosletivos.compo
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+
 
   ],
   providers: [],

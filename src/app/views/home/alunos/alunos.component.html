@@ -9,6 +9,7 @@
               <th scope="col">Matrícula</th>
               <th scope="col">Nome</th>
               <th scope="col">Imagem</th>
+              <th scope="col">CPF</th>
               <th scope="col">Ações</th>
             </tr>
           </thead>
@@ -18,6 +19,7 @@
               <td>{{aluno.matricula}}</td>
               <td>{{aluno.name}}</td>
               <td>{{aluno.imagem}}</td>
+              <td>{{aluno.cpf}}</td>
               <td>
                 <button type="button" class="btn btn-warning btn-sm"     (click)="editAluno(aluno)">Editar</button>
                 <button type="button" class="btn btn-danger btn-sm ml-1" (click)="deleteAluno(aluno)">Deletar</button>
@@ -64,6 +66,17 @@
                     <div *ngIf="imagem.errors?.required">A imagem é obrigatória</div>
                 </div>
             </div>
+
+
+            <div class="form-group">
+              <label for="cpf">cpf</label>
+              <input type="text" [(ngModel)]="aluno.cpf" id="cpf" name="cpf" #cpf="ngModel"
+              required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && cpf.invalid }" placeholder="Digite o cpf">
+
+              <div *ngIf="f.submitted && imagem.invalid" class="invalid-feedback">
+                  <div *ngIf="cpf.errors?.required">A cpf é obrigatória</div>
+              </div>
+          </div>
 
             <button type="submit" class="btn btn-primary btn-add-alçuno">Salvar</button>
             <button type="reset" class="btn btn-secondary btn-add-aluno" (click)="cleanForm(f)">Cancelar</button>
